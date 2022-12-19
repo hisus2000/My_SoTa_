@@ -1,0 +1,1 @@
+splitfolders --output data_set --ratio .8 .1 .1 -- {folder_with_images}

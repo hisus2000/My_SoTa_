@@ -1,0 +1,59 @@
+{
+    "name": "Resnet50Model",
+    "n_gpu": 1,
+    "arch": {
+        "type": "Resnet50Model",
+        "args": {
+            "num_classes": 1
+        }
+    },
+    "data_loader": {
+        "type": "CustomDataLoader",
+        "args": {
+            "data_dir": "./data_set/train/",
+            "train_image_size_": 64,
+            "batch_size": 128,
+            "mean": [
+                0.1125,
+                0.1125,
+                0.1125
+            ],
+            "std": [
+                0.1566,
+                0.1566,
+                0.1566
+            ],
+            "shuffle": true,
+            "validation_split": 0.0,
+            "num_workers": 4
+        }
+    },
+    "loss": "nll_loss",
+
+    "optimizer": {
+        "type": "Adam",
+        "args": {
+            "lr": 0.001,
+            "weight_decay": 0,
+            "amsgrad": true
+        }
+    },
+
+    "lr_scheduler": {
+        "type": "ReduceLROnPlateau",
+        "args": {
+            "mode": "min",
+            "factor": 0.5,
+            "patience": 5,
+            "verbosity": true
+        }
+    },
+    "metrics": [
+        "accuracy",
+        "top_k_acc"
+    ],
+    "trainer": {
+        "save_dir": "saved-test/"
+    }
+}
+

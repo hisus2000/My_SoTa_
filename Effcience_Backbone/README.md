@@ -13,7 +13,7 @@ All Class Folder split in **data_set Folder**.
 
 #### Config
 
-All element can config in ****
+All element can config in **data_set**
 
 ##### Note:
 

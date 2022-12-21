@@ -94,7 +94,7 @@ def main(cfg: argparse.Namespace):
     # testloader = DataLoader(testset, cfg.BATCH_SIZE, num_workers=num_workers, pin_memory=True)
 
     trainset = dset.ImageFolder(root="./data_set/train/",transform=train_transforms)
-    valset = dset.ImageFolder(root="./data_set/val/", transform=train_transforms)
+    valset = dset.ImageFolder(root="./data_set/val/", transform=val_transforms)
 
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=cfg.BATCH_SIZE,shuffle=True)
     testloader = torch.utils.data.DataLoader(valset, batch_size=cfg.BATCH_SIZE,shuffle=True)    
